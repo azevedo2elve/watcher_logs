@@ -1,0 +1,30 @@
+{
+    "logs_mob_sv1": {
+        "socket": "tail -f /var/log/java/Mobile/Socket.log",
+        "consumidor": "tail -f /var/log/java/Mobile/Consumidor.log",
+        "consumidor_baixa": "tail -f /var/log/java/Mobile/ConsumidorBaixaPrioridade.log",
+        "gerador": "tail -f /var/log/java/Mobile/Generator.log",
+        "gerador2": "tail -f /var/log/java/Mobile/Generator2.log",
+        "gerador3": "tail -f /var/log/java/Mobile/Generator3.log",
+        "socket_files": "tail -f /var/log/java/Mobile/SocketFiles.log",
+        "controle_frames": "tail -f /var/log/java/Mobile/ControleFrames.log"
+    },
+
+    "logs_mob_sv2": {
+        "socket": "tail -f /var/log/java/Mobile/Socket.log",
+        "consumidor": "tail -f /var/log/java/Mobile/ConsumidorDefault.log",
+        "consumidor_baixa": "tail -f /var/log/java/Mobile/ConsumidorBaixaPrioridade.log",
+        "gerador": "tail -f /var/log/java/Mobile/Generator.log",
+        "gerador2": "tail -f /var/log/java/Mobile/Generator2.log",
+        "gerador3": "tail -f /var/log/java/Mobile/Generator3.log",
+        "socket_files": "tail -f /var/log/java/Mobile/SocketFiles.log",
+        "controle_frames": "tail -f /var/log/java/Mobile/ControleFrames.log"
+    },
+
+    "logs_web_sv3": {
+        "sade_access": "tail -f /var/volumes/php7.3-apache/log/dns.com.br.access.log",
+        "sade_access_ssl": "tail -f /var/volumes/php7.3-apache/log/dns.com.br.access-ssl.log",
+        "sade_error": "tail -f /var/volumes/php7.3-apache/log/dns.com.br.error.log",
+        "sade_error_ssl": "tail -f /var/volumes/php7.3-apache/log/dns.com.br.error-ssl.log"
+    }
+}
