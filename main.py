@@ -38,10 +38,7 @@ if __name__ == "__main__":
         aplicacao = opcoes[2] # mob, ait, etc
         servico = opcoes[3] # socket, gerador, consumidor, etc
         
-        if servidor == 'mob':
-            logs = config[f"{cliente}"][f"{servidor}"][f"{aplicacao}"][f'{servico}']
-        else:
-            logs = config[f"logs_{servidor}_{cliente}"[f'{servico}']]
+        logs = config[f"{cliente}"][f"{servidor}"][f"{aplicacao}"][f'{servico}']
 
         host = os.getenv(f"host_{cliente}_{servidor}".upper())
         user = os.getenv(f"user_{cliente}".upper())
