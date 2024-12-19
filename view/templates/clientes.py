@@ -1,31 +1,32 @@
 import sys
 
-def clientes(opcoes):
+def clientes(opcoes, config):
     while True:
+        configuracao = list(config.keys())
+        print(f"Configuração: {configuracao}")
         print("\n=================================")
         print("Qual cliente você deseja acessar?")
-        print("1 - Paraná")
-        print("2 - Santa Catarina")
-        print("3 - Rondonia")
-        print("4 - Tocantins")
+        for i, key in enumerate(configuracao, start=1):
+                display_name = key.upper()
+                print(f"{i} - {display_name}")
         print("0 - Sair")
         cliente = input("Digite a opção desejada: ")
-        # opcoes[0]
-        match cliente:
-                case '0':
-                    print("\033[93mSAINDO DO SISTEMA...\033[0m")
-                    sys.exit()
-                case '1':
-                    opcoes.append('pr')
+        try:
+            cliente = int(cliente)
+            if cliente == 0:
+                print("\033[93mSAINDO DO SISTEMA...\033[0m")
+                sys.exit()
+
+            for i, key in enumerate(configuracao, start=1):
+                choose_name = key
+                if cliente == i:
+                    opcoes.append(choose_name)
+                    print(f"Você escolheu: {choose_name.upper()}")
                     break
-                case '2':
-                    opcoes.append('sc')
-                    break
-                case '3':
-                    opcoes.append('ro')
-                    break
-                case '4':
-                    opcoes.append('to')
-                    break
-                case _:
-                    print("\033[91mOpção inválida. Tente novamente.\033[0m")
+            else:
+                print("\033[91mOpção inválida. Tente novamente.\033[0m")
+                continue
+
+            break
+        except ValueError:
+            print("\033[91mOpção inválida. Por favor, digite um número.\033[0m")

@@ -8,16 +8,14 @@ def menu(config):
     # print(config.keys())
 
     # opcoes[0] sc, pr, to, etc CLIENTE
-    clientes(opcoes)
+    clientes(opcoes, config)
     if '0' in opcoes:
         return '0'     
-    print(opcoes)
 
     # opcoes[1] mob ou web SERVIDOR
     servidores(opcoes, config)
     if '0' in opcoes:
         return '0'
-    print(opcoes)  
     
     #opcoes[2] mobile, ait, gestao APLICAÇÃO
     while True:
@@ -55,7 +53,7 @@ def menu(config):
         print("\n=================================")
         print("Qual aplicação MOBILE deseja acessar?")
         for i, (key, value) in enumerate(configuracao.items(), start=1):
-            display_name = key.replace("logs_", "").upper()
+            display_name = key.replace("_", " ").upper()
             print(f"{i} - {display_name}")
         print("0 - Sair")
         servico = input("Digite a opção desejada: ")
